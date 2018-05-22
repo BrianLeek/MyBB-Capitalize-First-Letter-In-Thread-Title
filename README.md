@@ -10,9 +10,9 @@ Version: 1.1
 This plugin capitalizes the first letter of a thread title.
 
 # How To Install:
-Upload /inc/plugins/CFL.php to /inc/plugins on your forum.
-Go to your Admin CP.
-Activate Capitalize First Letter In Thread Title plugin.
+ - Upload /inc/plugins/CFL.php to /inc/plugins on your forum.
+ - Go to your Admin CP.
+ - Activate Capitalize First Letter In Thread Title plugin.
 
 
 # Note: 
