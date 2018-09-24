@@ -4,7 +4,7 @@ Description: This plugin capitalizes the first letter of a thread title.
 
 Author: Brian. ( https://community.mybb.com/user-115119.html )
 
-Version: 1.1
+Version: 1.2
 
 
 This plugin capitalizes the first letter of a thread title.

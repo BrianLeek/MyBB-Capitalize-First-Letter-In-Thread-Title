@@ -3,7 +3,7 @@
  * Plugin Name: Capitalize First Letter In Thread Title
  * Description: This plugin capitalizes the first letter of a thread title.
  * Author: Brian. ( https://community.mybb.com/user-115119.html )
- * Version: 1.1
+ * Version: 1.2
  * File: CFL.php
 **/
  
@@ -23,7 +23,7 @@ function CFL_info()
 		"website"		=> "https://community.mybb.com/user-115119.html",
 		"author"		=> "Brian.",
 		"authorsite"	=> "https://community.mybb.com/user-115119.html",
-		"version"		=> "1.1",
+		"version"		=> "1.2",
 		"compatibility" => "16*,18*"
 	);
 }
@@ -32,18 +32,18 @@ function CFL_activate()
 {
 	global $db;
 	$CFL_settingsgroup = array(
-		"gid"    => "NULL",
+		"gid"    => "0",
 		"name"  => "CFL_settingsgroup",
 		"title"      => "Capitalize First Letter In Thread Title Settings",
 		"description"    => "These options allow you to set the plugin to capitalize the first letter of thread titles.",
 		"disporder"    => "1",
-		"isdefault"  => "no",
+		"isdefault"  => "0",
 	);
 
 	$db->insert_query("settinggroups", $CFL_settingsgroup);
 	$gid = $db->insert_id();
 	$CFL_capitalthreads = array(
-		"sid"            => "NULL",
+		"sid"            => "0",
 		"name"        => "CFL_capitalthreads",
 		"title"            => "Capitalize first letter in thread title",
 		"description"    => "If you would like to capitalize the first letter in a thread\'s title, select yes below.",
@@ -81,6 +81,6 @@ function CFL_deactivate()
 		$db->query("DELETE FROM ".TABLE_PREFIX."settings WHERE name IN('CFL_capitalposts', 'CFL_settingsgroup')");
 		$db->query("DELETE FROM ".TABLE_PREFIX."settings WHERE name IN('CFL_capitalthreads', 'CFL_settingsgroup')");
 		$db->query("DELETE FROM ".TABLE_PREFIX."settinggroups WHERE name='CFL_settingsgroup'");
-		rebuildsettings();
+		rebuild_settings();
 }
 ?>
